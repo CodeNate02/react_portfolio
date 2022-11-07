@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from "react-router";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { FaUserAlt, FaClipboardList, FaFolderOpen } from "react-icons/fa";
+
+
 import AboutMe from "./pages/about_me";
 import Portfolio from "./pages/portfolio";
 import Resume from "./pages/resume";
