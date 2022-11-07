@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router";
+import { useRef, useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { FaUserAlt, FaClipboardList, FaFolderOpen } from "react-icons/fa";
@@ -35,11 +35,20 @@ export default App;
 
 const Wrapped = () => {
   const Navigate = useNavigate();
-  //const [slide, setSlide] = useState(0);
   var navigating = false;
   const [slide, setSlide] = useState(0);
   const CONTENT_REF = useRef<HTMLDivElement>(null);
+  const Page = useLocation().pathname;
+  useEffect(()=>{
+    switch(Page){
+      case '/resume': setSlide(1); break;
+      case '/portfolio': setSlide(2); break;
+    }
+  },[])
+
+  //Sliding page css animations
   const PageSlide = (newPage: string, num: number) => {
+
     //Typescript account for CONTENT_REF being null
     let direction;
     if (num > slide) direction = 1;
@@ -67,10 +76,11 @@ const Wrapped = () => {
       direction
     );
   };
+  
   return (
     <div
       id="App"
-      className="flex flex-col h-screen w-screen bg-space-portrait sm:bg-space-landscape bg-bottom bg-no-repeat bg-cover lg:bg-center p-[3%] text-white [color-scheme:dark]"
+      className="flex flex-col h-screen w-screen bg-space-portrait sm:bg-space-landscape bg-bottom bg-no-repeat bg-cover lg:bg-center p-[3%] text-white [color-scheme:dark] print:bg-none sm:print:bg-none print:text-black/100"
     >
       <div id="title" className="text-center font-tmrw">
         <h1 className="text-xl sm:text-3xl md:text-5xl">
@@ -83,7 +93,7 @@ const Wrapped = () => {
       </div>
       <nav
         id="navIcons"
-        className="flex justify-around w-full max-w-xl mx-auto my-2"
+        className="flex justify-around w-full max-w-xl mx-auto my-2 print:hidden"
       >
         {NAV_LINKS.map((item, index) => (
           <a
@@ -92,7 +102,7 @@ const Wrapped = () => {
             onClick={() => PageSlide(item.navigate, index)}
           >
             <item.icon className="w-8 h-8 sm:h-10 sm:w-10 " />
-            <p className="font-kumbh whitespace-nowrap transition-opacity duration-700 opacity-0 group-hover:opacity-100  text-white bg-blue-e/40 px-2 rounded-full text-center w-fit absolute left-[50%] translate-x-[-50%] top-full mt-1">
+            <p className="font-kumbh whitespace-nowrap transition-opacity duration-700 opacity-0 group-hover:opacity-100 bg-blue-e/40 px-2 rounded-full text-center w-fit absolute left-[50%] translate-x-[-50%] top-full mt-1 text-white">
               {item.label}
             </p>
           </a>
@@ -100,11 +110,11 @@ const Wrapped = () => {
       </nav>
       <div
         id="content-outer"
-        className="m-12 border-8 border-white border-double shadow-xl rounded-3xl bg-black/50 grow w-full max-w-[12in] mx-auto overflow-hidden relative"
+        className="m-12 border-8 border-white border-double shadow-xl rounded-3xl bg-black/50 grow w-full max-w-[12in] mx-auto overflow-hidden print:overflow-visible relative print:border-0 print:my-0 print:shadow-none print:bg-white print:w-full"
       >
         <div
           id="content-inner"
-          className="relative left-0 flex flex-col w-full h-full overflow-y-auto duration-1000 transition-[left]"
+          className="relative left-0 flex flex-col w-full h-full overflow-y-auto"
           ref={CONTENT_REF}
         >
           <Routes>
