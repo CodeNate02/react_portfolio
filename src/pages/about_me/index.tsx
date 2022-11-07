@@ -1,9 +1,10 @@
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import imageLink from '../../assets/nate.jpg'
 const AboutMe = () => {
 	return (
 		<>
 			<img
-				src="/assets/nate.jpg"
+				src={imageLink}
 				className="w-32 m-2 mx-auto border-2 shadow border-white/25 rounded-2xl"
 				alt="Nathaniel Bachelder"
 			/>
