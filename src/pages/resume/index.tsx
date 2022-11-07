@@ -43,7 +43,7 @@ const Resume = () => {
           </ul>
         </section>
         <br />
-        <section id='work'>
+        <section id="work">
           <h3 className="w-auto text-2xl border-b-2 border-white font-raleway print:border-black">
             Work Experience:
           </h3>
@@ -54,7 +54,7 @@ const Resume = () => {
         <br />
         <SkillsSection />
       </div>
-      <a className="sticky py-2 text-lg text-center underline text-blue-c hover:cursor-pointer hover:text-blue-b b-0 text-hidden bg-black/20">
+      <a className="sticky py-2 text-lg text-center underline text-blue-c hover:cursor-pointer hover:text-blue-b b-0 print:hidden bg-black/20">
         {/** NATE,
          * REMEMBER TO
          * ADD A LINK
@@ -163,7 +163,7 @@ const WORK_EXPERIENCE = [
   },
 ];
 const SKILLS = {
-  Beginner: ["Angular", "C#", "Bash"],
+  Beginner: ["Angular", "C#", "Bash", "Electron"],
   Intermediate: ["Python", "Java", "MySQL", "jQuery"],
   Proficient: ["HTML", "Javascript", "CSS", "React", "Typescript"],
 };
