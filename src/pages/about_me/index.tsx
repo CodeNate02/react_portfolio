@@ -12,7 +12,7 @@ const AboutMe = () => {
 				<h3 className="text-2xl text-center underline align-baseline font-kumbh">
 					About Me
 				</h3>
-				<p className="hidden">
+				<p>
 					When I was young, I was practically obsessed with computers.
 					I'd spend much of my time playing video games and exploring
 					the internet. Whenever something broke down, I'd watch with
@@ -39,7 +39,7 @@ const AboutMe = () => {
 					some of my abilities, as well as a showcase of some of the
 					projects that I've worked on both in and out of class.
 				</p>
-				<p>
+				<p className='hidden'>
 					My name is Nathaniel Bachelder. I am a fourth-year student
 					in Rochester Institute of Technology's Computing and
 					Information Technologies program. This site was built to act

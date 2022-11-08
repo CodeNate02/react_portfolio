@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { FaUserAlt, FaClipboardList, FaFolderOpen } from "react-icons/fa";
 
-
 import AboutMe from "./pages/about_me";
 import Portfolio from "./pages/portfolio";
 import Resume from "./pages/resume";
@@ -28,7 +27,7 @@ const NAV_LINKS = [
 ];
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/nrw4912/">
       <Wrapped />
     </BrowserRouter>
   );
@@ -41,16 +40,22 @@ const Wrapped = () => {
   const [slide, setSlide] = useState(0);
   const CONTENT_REF = useRef<HTMLDivElement>(null);
   const Page = useLocation().pathname;
-  useEffect(()=>{
-    switch(Page){
-      case '/resume': setSlide(1); break;
-      case '/portfolio': setSlide(2); break;
+  useEffect(() => {
+    console.log(Page);
+    switch (Page) {
+      case "/resume":
+      case "/resume/":
+        setSlide(1);
+        break;
+      case "/portfolio":
+      case "/portfolio/":
+        setSlide(2);
+        break;
     }
-  },[])
+  }, []);
 
   //Sliding page css animations
   const PageSlide = (newPage: string, num: number) => {
-
     //Typescript account for CONTENT_REF being null
     let direction;
     if (num > slide) direction = 1;
@@ -78,7 +83,7 @@ const Wrapped = () => {
       direction
     );
   };
-  
+
   return (
     <div
       id="App"

@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons/lib';
-import { PORTFOLIO_PROJECTS } from '../resume/data';
+import { PORTFOLIO_PROJECTS } from './data';
 const Portfolio = () => {
 	return (
 		<>
