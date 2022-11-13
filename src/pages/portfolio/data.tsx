@@ -6,13 +6,14 @@ import {
   SiJavascript,
   SiJquery,
   SiVite,
+  SiAngular,
 } from "react-icons/si";
 export const PORTFOLIO_PROJECTS = [
   {
     title: "Nate's Pokedex",
-    description: `I've been a fan of Pokemon for years, so as a personal project I decided to build a React app that fetched information from the PokeAPI database and served information on the Pokemon.  The database was more difficult to use than I had originally anticipated and some features, like the ability to display a Pokemon's evolutionary chain, didn't quite work as well as I had hoped, but overall I am proud of the result.  It was good practice working around a previously existing database and its quirks.`,
+    description: `I've been a fan of Pokemon for years, so as a personal project I decided to build a React app that fetched information from the PokeAPI database and served information on the Pokemon.  It was good practice working around a previously existing database and its quirks.`,
     creationDate: "October 2022",
-    link: "https://people.rit.edu/nrw4912/portfolio/pokedex",
+    link: "./pokedex",
     icons: [SiReact, SiTypescript, SiVite],
   },
   {
@@ -29,13 +30,21 @@ export const PORTFOLIO_PROJECTS = [
         poduct.`,
     creationDate: "June 2022",
     link: "https://nrwb-ischoolwebapp.azurewebsites.net/",
-    icons: [SiCsharp, SiDotnet],
+    icons: [SiCsharp, SiDotnet, SiJquery],
   },
   {
     title: "Myst Maze",
     creationDate: "Fall 2016, Rebuilt October 2022",
-    description: `Originally, Myst Maze was the product of a video game design class taken in my Sophomore year of high school.  The class followed an online tutorial to build a simple scrolling game, but I had my heart set on building a maze so, with my teacher's blessing, I spent hours both in class and after school researching guides and adapting the class tutorial to my needs in order to create my maze.  In my third year of college, I discovered an old backup of the game stored on my high school Google Drive account, mercifully left undeleted thanks to my time working as an intern.  I decided to update the game's code using the knowlege I'd gained during my time at RIT. This is the result.`,
-    link: "https://people.rit.edu/nrw4912/portfolio/maze",
+    description: `Originally, Myst Maze was the product of a video game design class taken in my sophomore year of high school.  The class followed an online tutorial to build a simple scrolling game, but I had my heart set on building a maze.  With my teacher's blessing, I spent hours both in class and after school researching guides and adapting the class tutorial to my needs in order to create my maze.  In my third year of college, I discovered an old backup of the game stored on my high school Google Drive account, mercifully left undeleted thanks to my time working as an intern.  I decided to update the game's code using the knowlege I'd gained during my time at RIT. This is the result.`,
+    link: "./maze",
     icons: [SiJavascript],
+  },
+  {
+    title: "Werdul",
+    creationDate: "November 2022",
+    description:
+      "This app was my first major attempt at working with Angular.  I set out to create my own version of the game Wordle that instead of being updated daily would grab a random word from a dictionary to allow infinite play and custom word lengths.",
+    link: "./wordgame",
+    icons: [SiAngular, SiTypescript],
   },
 ];
