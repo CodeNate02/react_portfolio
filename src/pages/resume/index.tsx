@@ -1,4 +1,3 @@
-import rDL from "../../assets/Nathaniel Bachelder - Resume.pdf";
 import { useMemo } from "react";
 import { RELEVANT_COURSES, WORK_EXPERIENCE, SKILLS } from "./data";
 
@@ -58,7 +57,7 @@ const Resume = () => {
       </div>
       <a
         className="sticky py-2 text-lg text-center underline text-blue-c hover:cursor-pointer hover:text-blue-b b-0 print:hidden bg-black/20"
-        href={rDL}
+        href='/nrw4912/resume/Nathaniel Bachelder - Resume.pdf'
         download
       >
         For Full PDF Resumé, Please Click Here

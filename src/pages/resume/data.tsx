@@ -34,6 +34,7 @@ export const WORK_EXPERIENCE = [
 		title: 'IT Development Co-Op',
 		duties: [
 			'Improve company efficiency by developing applications for internal use.',
+			'Recognized for timely competition of assigned projects.'
 		],
 	},
 	{
