@@ -33,8 +33,8 @@ export const WORK_EXPERIENCE = [
 		location: 'Victor, NY',
 		title: 'IT Development Co-Op',
 		duties: [
-			'Improve company efficiency by developing applications for internal use.',
-			'Recognized for timely competition of assigned projects.'
+			'Improve company efficiency by developing applications for internal use.','Digitized New Hire & Position Change forms by devising form management web-app using React and NoSQL.',
+			'Recognized for timely completion of assigned projects.'
 		],
 	},
 	{
